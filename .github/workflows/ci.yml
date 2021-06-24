@@ -1,0 +1,30 @@
+name: The Fuzz
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [2.7, 3.4, 3.5, 3.6, pypy]
+        test-cmd: py.test
+        include:
+          - python-version: pypy3.5-5.8.0
+            test-cmd: py.test test_thefuzz.py test_thefuzz_pytest.py
+          - python-version: [3.6, 3.8]
+            test-cmd: python setup.py check --restructuredtext --strict --metadata
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel          
+          pip install pytest pycodestyle docutils Pygments hypothesis                
+      - name: Test with pytest
+        env:          
+        run: |
+          ${{ matrix.test-cmd }}
