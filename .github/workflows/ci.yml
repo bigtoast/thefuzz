@@ -7,15 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [2.7, 3.4.10, 3.5, 3.6]
+        python-version: [2.7, 3.5, 3.6]
         test-cmd: [py.test]
-        include:
+        #include:
           #- python-version: pypy3.5-5.8.0
           #  test-cmd: py.test test_thefuzz.py test_thefuzz_pytest.py
-          - python-version: 3.6
-            test-cmd: python setup.py check --restructuredtext --strict --metadata
-          - python-version: 3.8
-            test-cmd: python setup.py check --restructuredtext --strict --metadata
+          #- python-version: 3.6
+           # test-cmd: python setup.py check --restructuredtext --strict --metadata
+          #- python-version: 3.8
+            #test-cmd: python setup.py check --restructuredtext --strict --metadata
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
