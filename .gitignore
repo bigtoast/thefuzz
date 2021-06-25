@@ -36,6 +36,7 @@ doc/aws_hostname.1
 # py.test
 .cache/
 .pytest_cache
+__pycache__
 
 # Pycharm
 .idea/
