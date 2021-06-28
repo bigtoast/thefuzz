@@ -1,5 +1,5 @@
-.. image:: https://github.com/bigtoast/thefuzz/actions/workflows/ci.yml/badge.svg
-    :target: https://github.com/bigtoast/thefuzz
+.. image:: https://github.com/seatgeek/thefuzz/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/seatgeek/thefuzz
 
 TheFuzz
 ==========
@@ -121,7 +121,7 @@ You can also pass additional parameters to ``extractOne`` method to make it use 
     >>> process.extractOne("System of a down - Hypnotize - Heroin", songs, scorer=fuzz.token_sort_ratio)
         ("/music/library/good/System of a Down/2005 - Hypnotize/10 - She's Like Heroin.mp3", 61)
 
-.. |Build Status| image:: https://github.com/bigtoast/thefuzz/actions/workflows/ci.yml/badge.svg
-   :target: https://github.com/bigtoast/thefuzz
+.. |Build Status| image:: https://github.com/seatgeek/thefuzz/actions/workflows/ci.yml/badge.svg
+   :target: https://github.com/seatgeek/thefuzz
 
 
